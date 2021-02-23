@@ -1,11 +1,11 @@
 # lab3task2
-All created operations take place in the main.py function. There I described the stages of the passage into the json file.
-The hidden.py file contains a function that returns the user's keys and tokens from the developer account.
-The oauth.py module handles user authentication via the API
-The twitter2.py module contains a function that returns .json information about friends on Twitter.
-The program is launched from the main.py module
-Example of work after module is run:
-+++++++++++++++
+# All created operations take place in the main.py function. There I described the stages of the passage into the json file.
+# The hidden.py file contains a function that returns the user's keys and tokens from the developer account.
+# The oauth.py module handles user authentication via the API
+# The twitter2.py module contains a function that returns .json information about friends on Twitter.
+# The program is launched from the main.py module
+# Example of work after module is run:
+# +++++++++++++++
 Retrieving https://api.twitter.com/1.1/friends/list.json?oauth_consumer_key=ca5oZNU2YPkRHWkQmSt85TOoA&oauth_timestamp=1614108260&oauth_nonce=87816539&oauth_version=1.0&screen_name=%40AKernytska&count=5&oauth_token=1362494612896698372-Nyn0Bxc2CUKuvnIUOwTSQK4565QMWB&oauth_signature_method=HMAC-SHA1&oauth_signature=Mj2CbDw2rkBIPL9FyiuLpKK%2FFjA%3D
 Remaining 12
 Info:
