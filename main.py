@@ -10,18 +10,38 @@ import json
 import twitter2
 
 # def parse_json_by(filepath: str) -> dict:
+# """
+# This feature was necessary in order not to once again receive a .json file
+#from the Twitter API, as Twitter throws
+# HttpTooManyRequestsError and has a share of 5 minutes before new requests.
+# """
 #     with open(f'{filepath}', 'r', encoding='utf-8-sig') as file:
 #         return json.load(file)
 
 def get_json_data():
+    """
+    The function receives a parsed .json file from the twitter2 module
+    """
     return twitter2.get_json_friends()
 
 
 def get_multiple_fields_by(json_data: dict, detail=False):
     """
-    The function provides an access to various parts of the json object. 
+    Here is the output and crawl into the file according to the following
+    algorithm:
+    Firstly, all data that is not a collection (array, dictionary, etc.) is
+    displayed.
+    And at the same time the keys of the data that are a collection are
+    displayed.
+    The function returns an ever deeper inner_fields dictionary,
+    navigating the user 
     """
     def _show_mono_fields_by(dct: dict, _detail):
+        """
+        Output of data pairs of type key: value
+        Except those whose data is a collection
+        The function only outputs data to the console.
+        """
         info = [
             (set, '(...)'),
             (dict, '{...}'),
