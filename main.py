@@ -1,17 +1,26 @@
+"""
+The developed module parses an json object (file) obtained using the Twitter
+API. The module contains a function get_multiple_fields_by(json_data: dict,
+detail=False) to provide access to various parts of the json object.
+For example, get_user_choice_by(inner_data) asks the user to enter the
+dictionary key whose meaning he wants to view. 
+https://github.com/akerni/lab3task2
+"""
 import json
 import twitter2
-
 
 # def parse_json_by(filepath: str) -> dict:
 #     with open(f'{filepath}', 'r', encoding='utf-8-sig') as file:
 #         return json.load(file)
-
 
 def get_json_data():
     return twitter2.get_json_friends()
 
 
 def get_multiple_fields_by(json_data: dict, detail=False):
+    """
+    The function provides an access to various parts of the json object. 
+    """
     def _show_mono_fields_by(dct: dict, _detail):
         info = [
             (set, '(...)'),
@@ -59,6 +68,10 @@ def get_multiple_fields_by(json_data: dict, detail=False):
 
 
 def get_user_choice_by(inner_data):
+    """
+    The fucntion asks the user to enter the dictionary key whose meaning he
+    wants to view.
+    """
     if isinstance(inner_data, list):
         while True:
             print(f'We have {len(inner_data)} data blocks inside.')
